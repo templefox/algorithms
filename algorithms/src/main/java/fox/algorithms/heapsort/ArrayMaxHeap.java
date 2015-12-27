@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+import fox.algorithms.util.ArrayUtil;
+
 public class ArrayMaxHeap<T extends Comparable<T>> implements Heap<T> {
 	private List<T> heap = new ArrayList<T>();
 	
@@ -112,9 +114,7 @@ public class ArrayMaxHeap<T extends Comparable<T>> implements Heap<T> {
 	}
 
 	private void exchange(int i, int j){
-		T temp = heapEntries[i];
-		heapEntries[i] = heapEntries[j];
-		heapEntries[j] = temp;
+		ArrayUtil.exchange(heapEntries, i, j);
 	}
 
 	private int left(int i) {
